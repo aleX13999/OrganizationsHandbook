@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\App\Activity\Repository\ActivityRepositoryInterface;
+use App\App\Building\Repository\BuildingRepositoryInterface;
+use App\App\Organization\Repository\OrganizationRepositoryInterface;
+use App\Repositories\ActivityRepository;
+use App\Repositories\BuildingRepository;
+use App\Repositories\OrganizationRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(BuildingRepositoryInterface::class, BuildingRepository::class);
+        $this->app->bind(OrganizationRepositoryInterface::class, OrganizationRepository::class);
+        $this->app->bind(ActivityRepositoryInterface::class, ActivityRepository::class);
     }
 
     /**
