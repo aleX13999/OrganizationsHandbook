@@ -28,7 +28,7 @@ cd <папка_проекта>
 3. Отредактируйте `.env`, укажите необходимые настройки (под Docker):
 ```dotenv
 NGINX_HOST=127.0.0.1
-NGINX_HTTP_PORT=
+NGINX_HTTP_PORT=8081
 
 DB_CONNECTION=mysql
 DB_HOST=mysql
