@@ -23,10 +23,7 @@ git clone https://github.com/aleX13999/OrganizationsHandbook.git
 cd <папка_проекта>
 ```
 
-2. Создайте файл окружения `.env` командой:
-```shell
-cp .env.example .env
-```
+2. Создайте файл окружения `.env` скопировав его из файла `.env.example`
 
 3. Отредактируйте `.env`, укажите необходимые настройки (под Docker):
 ```dotenv
@@ -62,30 +59,24 @@ docker compose up -d
 5. Установите зависимости composer:
 
 ```shell
-docker exec -it php-fpm composer install
+docker exec -it oh-php-fpm composer install
 ```
 
 6. Выполните миграции:
 
 ```shell
-docker exec -it php-fpm php artisan migrate
+docker exec -it oh-php-fpm php artisan migrate
 ```
 
 7. Заполнить БД тестовыми данными:
 ```shell
-docker exec -it php-fpm php artisan db:seed
+docker exec -it oh-php-fpm php artisan db:seed
 ```
 
 8. Сгенерируйте ключ приложения:
 
 ```shell
-docker exec -it php-fpm php artisan key:generate
-```
-
-9. Сгенерируйте документацию Swagger:
-
-```shell
-docker exec -it oh-php-fpm php artisan l5-swagger:generate
+docker exec -it oh-php-fpm php artisan key:generate
 ```
 
 ### Открыть документацию Swagger можно по маршруту:
